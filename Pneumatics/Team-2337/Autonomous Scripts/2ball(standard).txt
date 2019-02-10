@@ -1,0 +1,7 @@
+#basic 2-ball auton
+
+setShooterRPMNoDelay(relative, t, 0, 2400)
+shoot(relative, t, 4, t, 1, shootOne)
+intake(relative, label-end, shootOne, t, 1, intakeOne)
+testFunct(relative, label-end, intakeOne, t, 1.5, beginShootTwo)
+shoot(relative, label-end, beginShootTwo, t, 15)

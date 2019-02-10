@@ -1,0 +1,2 @@
+﻿wait_for condition=elev_zeroed
+set_elevator eject=yes

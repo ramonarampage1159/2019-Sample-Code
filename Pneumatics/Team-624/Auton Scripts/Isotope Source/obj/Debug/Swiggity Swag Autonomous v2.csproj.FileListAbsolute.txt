@@ -1,0 +1,29 @@
+C:\Users\team624\Dropbox\Team 624 Programming\Swiggity Swag Autonomous 2.0\Swiggity Swag Autonomous v2\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\team624\Dropbox\Team 624 Programming\Swiggity Swag Autonomous 2.0\Swiggity Swag Autonomous v2\obj\Debug\Samples\AvalonEdit\Window1.baml
+C:\Users\team624\Dropbox\Team 624 Programming\Swiggity Swag Autonomous 2.0\Swiggity Swag Autonomous v2\obj\Debug\Window1.baml
+C:\Users\team624\Dropbox\Team 624 Programming\Swiggity Swag Autonomous 2.0\Swiggity Swag Autonomous v2\obj\Debug\Samples\AvalonEdit\Window1.g.cs
+C:\Users\team624\Dropbox\Team 624 Programming\Swiggity Swag Autonomous 2.0\Swiggity Swag Autonomous v2\obj\Debug\Window1.g.cs
+C:\Users\team624\Dropbox\Team 624 Programming\Swiggity Swag Autonomous 2.0\Swiggity Swag Autonomous v2\obj\Debug\App.g.cs
+C:\Users\team624\Dropbox\Team 624 Programming\Swiggity Swag Autonomous 2.0\Swiggity Swag Autonomous v2\obj\Debug\Swiggity Swag Autonomous v2_MarkupCompile.cache
+C:\Users\team624\Dropbox\Team 624 Programming\Swiggity Swag Autonomous 2.0\Swiggity Swag Autonomous v2\obj\Debug\Swiggity Swag Autonomous v2.g.resources
+C:\Users\team624\Dropbox\Team 624 Programming\Swiggity Swag Autonomous 2.0\Swiggity Swag Autonomous v2\obj\Debug\Swiggity Swag Autonomous v2.exe
+C:\Users\team624\Dropbox\Team 624 Programming\Swiggity Swag Autonomous 2.0\Swiggity Swag Autonomous v2\bin\Debug\Swiggity Swag Autonomous v2.exe
+C:\Users\team624\Dropbox\Team 624 Programming\Swiggity Swag Autonomous 2.0\Swiggity Swag Autonomous v2\bin\Debug\Swiggity Swag Autonomous v2.pdb
+C:\Users\team624\Dropbox\Team 624 Programming\Swiggity Swag Autonomous 2.0\Swiggity Swag Autonomous v2\bin\Debug\ICSharpCode.AvalonEdit.dll
+C:\Users\team624\Dropbox\Team 624 Programming\Swiggity Swag Autonomous 2.0\Swiggity Swag Autonomous v2\bin\Debug\ICSharpCode.AvalonEdit.xml
+C:\Users\team624\Dropbox\Team 624 Programming\Swiggity Swag Autonomous 2.0\Swiggity Swag Autonomous v2\obj\Debug\Swiggity Swag Autonomous v2.pdb
+C:\Users\Owner\Dropbox\Programming\C#\Robotics\Swiggity Swag Autonomous 2.0\Swiggity Swag Autonomous v2\bin\Debug\Swiggity Swag Autonomous v2.exe
+C:\Users\Owner\Dropbox\Programming\C#\Robotics\Swiggity Swag Autonomous 2.0\Swiggity Swag Autonomous v2\bin\Debug\Swiggity Swag Autonomous v2.pdb
+C:\Users\Owner\Dropbox\Programming\C#\Robotics\Swiggity Swag Autonomous 2.0\Swiggity Swag Autonomous v2\bin\Debug\ICSharpCode.AvalonEdit.dll
+C:\Users\Owner\Dropbox\Programming\C#\Robotics\Swiggity Swag Autonomous 2.0\Swiggity Swag Autonomous v2\bin\Debug\ICSharpCode.AvalonEdit.xml
+C:\Users\Owner\Dropbox\Programming\C#\Robotics\Swiggity Swag Autonomous 2.0\Swiggity Swag Autonomous v2\obj\Debug\Swiggity Swag Autonomous v2.csprojResolveAssemblyReference.cache
+C:\Users\Owner\Dropbox\Programming\C#\Robotics\Swiggity Swag Autonomous 2.0\Swiggity Swag Autonomous v2\obj\Debug\Samples\AvalonEdit\Window1.baml
+C:\Users\Owner\Dropbox\Programming\C#\Robotics\Swiggity Swag Autonomous 2.0\Swiggity Swag Autonomous v2\obj\Debug\Samples\AvalonEdit\Window1.g.cs
+C:\Users\Owner\Dropbox\Programming\C#\Robotics\Swiggity Swag Autonomous 2.0\Swiggity Swag Autonomous v2\obj\Debug\Window1.g.cs
+C:\Users\Owner\Dropbox\Programming\C#\Robotics\Swiggity Swag Autonomous 2.0\Swiggity Swag Autonomous v2\obj\Debug\App.g.cs
+C:\Users\Owner\Dropbox\Programming\C#\Robotics\Swiggity Swag Autonomous 2.0\Swiggity Swag Autonomous v2\obj\Debug\Swiggity Swag Autonomous v2_MarkupCompile.cache
+C:\Users\Owner\Dropbox\Programming\C#\Robotics\Swiggity Swag Autonomous 2.0\Swiggity Swag Autonomous v2\obj\Debug\Swiggity Swag Autonomous v2_MarkupCompile.lref
+C:\Users\Owner\Dropbox\Programming\C#\Robotics\Swiggity Swag Autonomous 2.0\Swiggity Swag Autonomous v2\obj\Debug\Window1.baml
+C:\Users\Owner\Dropbox\Programming\C#\Robotics\Swiggity Swag Autonomous 2.0\Swiggity Swag Autonomous v2\obj\Debug\Swiggity Swag Autonomous v2.g.resources
+C:\Users\Owner\Dropbox\Programming\C#\Robotics\Swiggity Swag Autonomous 2.0\Swiggity Swag Autonomous v2\obj\Debug\Swiggity Swag Autonomous v2.exe
+C:\Users\Owner\Dropbox\Programming\C#\Robotics\Swiggity Swag Autonomous 2.0\Swiggity Swag Autonomous v2\obj\Debug\Swiggity Swag Autonomous v2.pdb

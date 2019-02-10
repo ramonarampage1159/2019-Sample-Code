@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window
+	x:Class="Isotope.OptionsWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	Title="Isotope - Options"
+	Height="520"
+	ResizeMode="NoResize"
+	Width="480">
+	<Window.Resources>
+		<Style
+			TargetType="{x:Type GridViewColumnHeader}">
+			<Setter
+				Property="HorizontalContentAlignment"
+				Value="Left" />
+		</Style>
+	</Window.Resources>
+	<Grid>
+		<TabControl
+			Grid.Column="0"
+			Grid.Row="0"
+			HorizontalAlignment="Stretch"
+			VerticalAlignment="Stretch"
+			Width="NaN"
+			Height="NaN"
+			Margin="0,0,0,0">
+			<TabItem
+				Header="Editor">
+				<TabItem.Content>
+					<StackPanel>
+						<Label
+							Content="Syntax Highlighting"
+							HorizontalAlignment="Left"
+							VerticalAlignment="Top"
+							Width="118"
+							Height="29" />
+						<ListView
+							Margin="10"
+							x:Name="syntaxList"
+							HorizontalContentAlignment="Left"
+							SelectionMode="Multiple"
+							Height="275">
+							<ListView.View>
+								<GridView>
+									<GridViewColumn
+										Header="Keyword"
+										Width="160"
+										DisplayMemberBinding="{Binding Word}" />
+									<GridViewColumn
+										Header="Color"
+										Width="100">
+										<GridViewColumn.CellTemplate>
+											<DataTemplate>
+												<TextBlock
+													Name="colorBox"
+													Text="{Binding color}">
+													<TextBlock.Foreground>
+														<SolidColorBrush
+															Color="{Binding color}" />
+													</TextBlock.Foreground>
+												</TextBlock>
+											</DataTemplate>
+										</GridViewColumn.CellTemplate>
+									</GridViewColumn>
+									<GridViewColumn
+										Header="Style"
+										Width="100"
+										DisplayMemberBinding="{Binding fontstyle}" />
+								</GridView>
+							</ListView.View>
+						</ListView>
+						<StackPanel
+							Orientation="Horizontal"
+							HorizontalAlignment="Right">
+							<Button
+								HorizontalAlignment="Right"
+								Click="add_word"
+								Margin="10,0,10,0"
+								Content="Add" />
+							<Button
+								Click="edit_word"
+								Margin="0,0,10,0"
+								Content="Edit" />
+							<Button
+								HorizontalAlignment="Right"
+								Click="delete_word_click"
+								Content="Delete"
+								Margin="0,0,10,0" />
+						</StackPanel>
+					</StackPanel>
+				</TabItem.Content>
+			</TabItem>
+			<TabItem
+				Header="Autonomous"
+				AllowDrop="True"
+				Drop="file_drop">
+				<TabItem.Content>
+					<StackPanel>
+						<Label
+							Content="Command Manager"
+							HorizontalAlignment="Left"
+							VerticalAlignment="Top"
+							Width="118"
+							Height="29" />
+						<ListView
+							x:Name="commandList"
+							SelectionMode="Multiple"
+							Margin="10,0,10,0"
+							Height="155">
+							<ListView.View>
+								<GridView>
+									<GridViewColumn
+										Header="Index"
+										Width="50"
+										DisplayMemberBinding="{Binding Index}" />
+									<GridViewColumn
+										Header="Command"
+										Width="150"
+										DisplayMemberBinding="{Binding Commnd}" />
+									<GridViewColumn
+										Header="Description"
+										Width="230"
+										DisplayMemberBinding="{Binding Description}" />
+								</GridView>
+							</ListView.View>
+						</ListView>
+						<Label
+							Content="Sub-Command Manager"
+							HorizontalAlignment="Left"
+							VerticalAlignment="Top"
+							Height="29"
+							Width="157" />
+						<ListView
+							x:Name="subcommandList"
+							Margin="10,0,10,10"
+							SelectionMode="Multiple"
+							Height="155">
+							<ListView.View>
+								<GridView>
+									<GridViewColumn
+										Header="CSV Row"
+										Width="60"
+										DisplayMemberBinding="{Binding Row}" />
+									<GridViewColumn
+										Header="Sub-Command"
+										Width="130"
+										DisplayMemberBinding="{Binding Sub}" />
+									<GridViewColumn
+										Header="Parent Command"
+										Width="100"
+										DisplayMemberBinding="{Binding parentCommand.Commnd}" />
+									<GridViewColumn
+										Header="Description"
+										Width="200"
+										DisplayMemberBinding="{Binding sDescription}" />
+								</GridView>
+							</ListView.View>
+						</ListView>
+						<StackPanel
+							Orientation="Horizontal"
+							HorizontalAlignment="Right">
+							<Button
+								HorizontalAlignment="Right"
+								Click="add_command"
+								Margin="0,0,10,0"
+								Content="Add" />
+							<Button
+								Click="edit_command"
+								Margin="0,0,10,0"
+								Content="Edit" />
+							<Button
+								HorizontalAlignment="Right"
+								Click="delete_click"
+								Margin="0,0,10,0"
+								Content="Delete" />
+							<Button
+								HorizontalAlignment="Right"
+								Click="clear_command"
+								Margin="0,0,10,0"
+								Content="Clear All" />
+							<Button
+								Content="Load .JSON Template"
+								HorizontalAlignment="Right"
+								Click="add_json_click"
+								Margin="0,0,10,0" />
+							<Button
+								Content="Export as .JSON"
+								HorizontalAlignment="Right"
+								Click="make_json_click"
+								Margin="0,0,10,0" />
+						</StackPanel>
+					</StackPanel>
+				</TabItem.Content>
+			</TabItem>
+			<TabItem
+				Header="Aliases"
+				AllowDrop="True"
+				Drop="file_drop">
+				<TabItem.Content>
+					<ListView
+						x:Name="aliasList"
+						Margin="10,0,10,10"
+						SelectionMode="Multiple"
+						Height="257"
+						VerticalContentAlignment="Center">
+						<ListView.View>
+							<GridView>
+								<GridViewColumn
+									Header="Alias Name"
+									Width="200"
+									DisplayMemberBinding="{Binding Alias}" />
+								<GridViewColumn
+									Header="Represents"
+									Width="200"
+									DisplayMemberBinding="{Binding Number}" />
+							</GridView>
+						</ListView.View>
+					</ListView>
+				</TabItem.Content>
+			</TabItem>
+			<TabItem
+				Header="Auto-Load"
+				AllowDrop="True"
+				Drop="file_drop">
+				<TabItem.Content>
+					<StackPanel
+						Orientation="Horizontal"
+						HorizontalAlignment="Right"
+						Width="426"
+						Height="43">
+						<CheckBox
+							Height="17"
+							VerticalAlignment="Center"
+							HorizontalAlignment="Center"
+							RenderTransformOrigin="0.5,0.5"
+							Checked="JSONCheckBoxChanged" Unchecked="JSONCheckBoxChanged"
+							x:Name="use_json_cb" />
+						<Label
+							Width="282"
+							Content="Sample Text"
+							Height="28"
+							x:Name="file_display" />
+						<Button
+							Width="75"
+							Height="23"
+							RenderTransformOrigin="0.5,0.5"
+							HorizontalAlignment="Center"
+							Margin="10,0,0,0"
+							Content="Load File"
+							x:Name="loadjsonfile"
+							Click="loadjsonfile_Click"></Button>
+					</StackPanel>
+				</TabItem.Content>
+			</TabItem>
+		</TabControl>
+		<StackPanel
+			Orientation="Horizontal"
+			Grid.Column="0"
+			Grid.Row="0"
+			HorizontalAlignment="Right"
+			VerticalAlignment="Bottom"
+			Width="82"
+			Height="22"
+			Margin="0,0,10,8">
+			<Button
+				Content="Save"
+				HorizontalAlignment="Right"
+				VerticalAlignment="Bottom"
+				RenderTransformOrigin="0.5,0.5"
+				Click="ok_click" />
+			<Button
+				Content="Cancel"
+				HorizontalAlignment="Right"
+				Margin="10,0,10,0"
+				VerticalAlignment="Bottom"
+				Click="cancel_click" />
+		</StackPanel>
+	</Grid>
+</Window>

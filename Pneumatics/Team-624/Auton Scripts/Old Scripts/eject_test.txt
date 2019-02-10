@@ -1,0 +1,1 @@
+﻿set_rollers mode=manual command=out closed=yes

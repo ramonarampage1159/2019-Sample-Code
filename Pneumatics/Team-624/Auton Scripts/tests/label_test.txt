@@ -1,0 +1,5 @@
+﻿goto to=ROBOT
+drive y=1
+ROBOT:
+drive x=1
+set_rollers align=right

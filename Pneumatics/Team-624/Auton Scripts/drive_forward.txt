@@ -1,0 +1,5 @@
+﻿yaw_zero angle=180
+set_rollers mode=manual align=idle closed=no
+drive y=5 yspeed=0.4 heading=180
+set_rollers mode=manual align=idle closed=yes
+wait maxTime=0

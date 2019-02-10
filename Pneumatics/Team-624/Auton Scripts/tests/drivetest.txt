@@ -1,0 +1,4 @@
+﻿set_elevator mode=manual
+drive y=10 x=0 heading=0
+wait_for condition=distance y=5
+set_rollers mode=manual closed=yes

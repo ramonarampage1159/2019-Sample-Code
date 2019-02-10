@@ -1,0 +1,10 @@
+﻿yaw_zero angle=90
+set_rollers mode=manual closed=yes align=idle
+drive y=-1 heading=90 yspeed=.4 async=no
+resetEncoders
+drive heading=0 yspeed=.4 async=no
+resetEncoders
+drive y=6 heading=0 yspeed=.5 async=no
+drive heading=90 yspeed=.5 async=no
+resetEncoders
+drive y=6 heading=90 yspeed=.5 async=no
