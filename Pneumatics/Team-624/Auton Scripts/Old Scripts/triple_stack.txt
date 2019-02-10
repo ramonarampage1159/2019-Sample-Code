@@ -1,0 +1,51 @@
+﻿set_elevator mode=manual
+set_rollers mode=manual closed=yes align=right
+set_count totes=1 can=0
+wait maxTime=500
+set_drive y=0.4
+wait_for condition=past_y_dist dist=0.75
+;open to push can 1
+set_rollers mode=manual closed=no align=right
+;get elevator up for tote 2
+set_elevator mode=auto command=idle
+;drive at 0.3 speed, and...
+set_drive y=0.3
+;wait until past 4.5 ft
+wait_for condition=past_y_dist dist=4.5
+;close the rollers and intake manually
+set_rollers mode=manual closed=yes align=in
+;target 10 ft @ 30%
+drive y=10 yspeed=0.3 async=yes
+;drive while waiting for tote 2 to load.
+wait_for condition=elevator_ping_detect
+;tote is now in, start turning wheels other way for bin
+set_rollers mode=manual closed=yes align=right
+wait_for condition=past_y_dist dist=8.25
+;@ 8 feet, open rollers to push bin out of way
+set_rollers mode=manual closed=no align=right
+set_elevator mode=auto command=one_tote
+wait_for_drive
+wait maxTime=750
+set_rollers mode=auto auto_cmd=1
+drive y=12 yspeed=0.3
+wait_for_drive
+wait_for condition=elevator_ping_detect
+set_rollers mode=manual closed=yes align=idle
+set_elevator mode=manual
+resetEncoders
+drive heading=60 yspeed=0.4
+resetEncoders
+//changed heading to 60 from 45 2.15 @ build
+drive heading=60 y=10.75 yspeed=.6 async=1
+wait_for condition=past_y_dist dist=1 
+set_elevator mode=auto command=idle hold_low=yes
+set_rollers mode=manual closed=no align=out
+wait_for_drive
+resetEncoders
+drive y=-2 yspeed=.6 heading=60
+//changed heading to 60 from 45 2.15 @ build
+;drive y=10 heading=60 xspeed=.8 yspeed=.8
+;drop_stack
+;wait maxTime=500
+;resetEncoders
+;drive y=-4 heading=0 xspeed=.6 yspeed=.6

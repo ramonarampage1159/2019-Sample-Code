@@ -1,0 +1,58 @@
+﻿set_rollers mode=manual align=idle closed=no
+pike action=lift
+wait_for condition=elev_zeroed
+yaw_zero angle=90 
+set_elevator mode=manual idle_set=can_load_height 
+set_rollers mode=manual align=right closed=yes 
+wait maxTime=700 
+set_rollers mode=manual align=in closed=yes 
+drive x=0 y=1.25 heading=90 async=yes yspeed=0.25 
+wait_for dist=0.125 condition=past_y_dist
+set_rollers mode=manual align=in closed=no
+set_elevator mode=auto command=load_can force=yes 
+wait_for_drive 
+set_elevator mode=auto command=idle idle_set=tote_load_height
+set_rollers mode=manual align=in closed=yes 
+wait maxTime=500
+;wait_for condition=elevator_ping_detect 
+resetEncoders 
+drive x=0 y=0 heading=180 yspeed=0.4 async=yes 
+wait maxTime=500
+drive x=0 y=0 heading=-70 yspeed=0.4
+wait_for_drive 
+resetEncoders
+drive y=.7 heading=-70 yspeed=.6 async=yes
+set_elevator mode=auto command=one_tote 
+set_rollers mode=manual align=in closed=no 
+wait_for condition=elevator_ping_detect 
+wait maxTime=750 
+drive y=7.75 heading=-90 async=yes yspeed=0.4
+set_elevator mode=0 command=0 hold_low=0 force=0 idle_set=0 
+wait_for dist=1.25 condition=past_y_dist maxTime=0 
+set_rollers mode=manual align=in closed=yes
+//wait_for condition=elevator_ping_detect
+wait_for dist=2.25 condition=past_y_dist maxTime=0
+set_rollers mode=manual align=right closed=yes 
+wait_for dist=3.5 condition=forward_past_y_dist
+set_rollers mode=manual align=right closed=no
+wait_for dist=5 condition=forward_past_y_dist
+set_elevator mode=auto command=one_tote
+wait_for condition=past_y_dist dist=7.5
+store_can store=yes
+set_rollers mode=manual align=in closed=yes
+wait_for_drive
+set_elevator mode=auto command=idle hold_low=0 force=0 idle_set=0 
+;wait_for condition=elevator_ping_detect
+;store_can store=1 
+//set_elevator mode=0 command=one_tote hold_low=0 force=0 idle_set=0 
+//wait maxTime=750 
+resetEncoders 
+drive y=0 heading=-20 yspeed=0.75
+wait_for_drive 
+resetEncoders 
+set_rollers closed=no
+drive x=0 y=10 heading=-20 maxTime=0 async=yes yspeed=1
+set_elevator mode=auto command=idle hold_low=yes 
+wait_for_drive 
+drive x=0 y=8 heading=-20 yspeed=1
+wait_for_drive

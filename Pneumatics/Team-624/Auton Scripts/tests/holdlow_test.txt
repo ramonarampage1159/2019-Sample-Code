@@ -1,0 +1,5 @@
+﻿set_count totes=3
+set_elevator mode=auto command=idle
+set_rollers mode=manual
+wait maxTime=2000
+set_elevator mode=auto command=idle hold_low=yes

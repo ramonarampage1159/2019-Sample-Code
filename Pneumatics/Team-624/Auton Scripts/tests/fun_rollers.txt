@@ -1,0 +1,4 @@
+﻿set_count totes=1 can=0
+set_rollers mode=manual closed=yes align=right
+wait maxTime=2000
+set_rollers mode=manual closed=no align=right

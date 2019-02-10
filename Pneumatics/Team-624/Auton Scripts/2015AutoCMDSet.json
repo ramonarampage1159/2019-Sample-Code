@@ -1,0 +1,200 @@
+[
+  {
+    "name":"wait",
+    "id": 0,
+    "desc": "sleep for the specified duration",
+    "subs": [
+      {"name":"maxTime", "id":3,"desc":"wait duration (ms). (0 = forever)"}
+    ]
+  },
+  {
+    "name":"drive",
+    "id": 1,
+    "desc":"drive forward/backward for the specified distance, steering toward the specified angle",
+    "subs" : [
+	  {"name":"x", "id":0, "desc":"omni left/right distance(feet) positive(+) is right, negative(-) is left"},
+      {"name":"y","id":1, "desc":"distance to drive (in feet) positive (+) is forwards, negative (-) is backwards  (Distances are from last encoder reset)"},
+      {"name":"heading", "id":2, "desc":"angle to steer toward while driving (clockwise is positive, 0 = straight)"},
+	  {"name":"maxTime", "id":3,"desc":"time limit (ms). (0 = forever)"},
+	  {"name":"async", "id":4, "desc":"Return immediately? (0=No, 1=Yes)"},
+	  {"name":"xspeed", "id":5, "desc":"X Min and Max Speed"},
+	  {"name":"yspeed", "id":6, "desc":"Y Min and Max Speed"}
+    ]
+  },
+  {
+    "name":"goto",
+    "id": 2,
+    "desc":"Transfers execution to the specified command index based on conditions",
+    "subs" : [
+		{"name":"to", "id":0,"desc": "Command Index to go to"},
+		{"name":"type", "id":1,"desc":"0=unconditional 1=conditional"},
+		{"name":"condition","id":2, "desc": "0 = found tote"}
+    ]
+  },
+  {
+    "name":"set_rollers",
+    "id": 3,
+    "desc":"Sets Roller Mode, Motors, and Open/closed",
+    "subs" : [
+		{"name":"mode", "id":0,"desc":"0=Auto, 1= Manual"},
+		{"name":"align", "id":1,"desc":"Determine Alignment (0=Idle, 1=In, 2=Out, 3=Left, 4=Right)"},
+		{"name":"closed","id":2, "desc": "Close the Rollers? (0=No, 1=Yes)"},
+		{"name":"auto_cmd", "id":3,"desc":"Set Auto State (1=Grab, 0=Idle, 2=Eject)"},
+		{"name":"override_speed", "id":4, "desc":"Set Override Speed"}
+    ]
+  },
+	{
+    "name":"wait_for_drive",
+    "id": 5,
+    "desc":"Waits until driving completes",
+    "subs" : [
+		]
+  },
+	{
+    "name":"store_can",
+    "id": 6,
+    "desc":"Stores Can at Top of Elevator. Does not let go unless instructed to",
+    "subs" : [
+		{"name":"store", "id":0,"desc": "0=no, 1=yes"}
+		]
+  },
+	{
+    "name":"drop_stack",
+    "id": 7,
+    "desc":"Drops Auto Stack",
+    "subs" : [
+		 {"name":"maxTime", "id":3,"desc":"time limit (ms). (0 = forever)"}
+		]
+  },
+  {
+    "name":"pickup",
+    "id": 8,
+    "desc":"Picks Up a Tote",
+    "subs" : [
+		 {"name":"maxTime", "id":3,"desc":"time limit (ms). (0 = forever)"},
+		 {"name":"hold_low", "id":2,"desc":"0 = no 1=yes"}
+		]
+  },
+  {
+    "name":"set_elevator",
+    "id": 9,
+    "desc":"Sets Elevator Stuff",
+    "subs" : [
+		{"name":"mode","id":0,"desc":"0=auto, 1=manual"},
+		{"name":"command","id":1,"desc":"0=idle, 1=one_tote, 2=two_totes, 3=three_totes 4=can"},
+		{"name":"hold_low", "id":2,"desc":"0 = no 1=yes"},
+		{"name":"force", "id":3,"desc":"0 = no 1=yes"},
+		{"name":"idle_set", "id":4,"desc":"0=tote_load_height 1=can_load_height, 5=raw_height"},
+		{"name":"eject", "id":5,"desc":"0=no 1=yes"},
+		{"name":"height", "id":6, "desc":"height for raw_height idle mode"}
+		]
+  },
+  {
+    "name":"wait_for",
+    "id": 10,
+    "desc":"Waits for a condition to be true",
+    "subs" : [
+			{"name":"condition","id":2,"desc":"0=elev_zeroed, 1=one_tote, 2=two_totes, 3=three_totes, 4=past_y_dist, 5=past_x_dist, 6=elevator_ping_detect, 7=forward_past_y_dist, 8=elevator_in_position, 9=elevator_higher_than, 10=elevator_lower_than"},
+			{"name":"dist","id":0,"desc":"distance target"},
+			{"name":"maxTime", "id":3,"desc":"time limit (ms). (0 = forever)"},
+		    {"name":"height", "id":6, "desc":"elevator height"}
+		]
+  },
+  {
+    "name":"set_drive",
+    "id": 11,
+    "desc":"Drives without distance PID, just using gyro",
+    "subs" : [
+			{"name":"x","id":0,"desc":"x speed"},
+			{"name":"y","id":1,"desc":"y speed"},
+			{"name":"heading","id":2,"desc":"gyro heading target"}
+		]
+  }, 
+  {
+    "name":"set_count",
+    "id": 12,
+    "desc":"Drives without distance PID, just using gyro",
+    "subs" : [
+			{"name":"totes","id":0,"desc":"# totes"},
+			{"name":"can","id":1,"desc":"0=no 1=yes"},
+		]
+  },
+  {
+    "name":"resetEncoders",
+    "id": 13,
+    "desc":"Resets Encoders",
+    "subs" : [
+		]
+  },
+  {
+    "name":"yaw_zero",
+    "id": 14,
+    "desc":"Sets Yaw Orientation",
+    "subs" : [
+		{"name":"angle","id":0,"desc":"Angle to Zero at"}
+		]
+  },
+  {
+    "name":"grab_cans",
+    "id": 15,
+    "desc":"Grabs Cans Off of Step",
+    "subs" : [
+		{"name":"grab","id":0,"desc":"0=no, 1=yes"}
+		]
+  },
+  {
+    "name":"pike",
+    "id": 16,
+    "desc":"Grabs Cans Off the floor",
+    "subs" : [
+		{"name":"action","id":0,"desc":"0=idle, 1=lift, 2=drop"}
+		]
+  },
+  {
+    "name":"fast_pivot",
+    "id": 17,
+    "desc":"pivots... possibly quickly",
+    "subs" : [
+      {"name":"heading", "id":2, "desc":"angle to steer toward while driving (clockwise is positive, 0 = straight)"},
+      {"name":"pivot_speed","id":1, "desc":"gyro turny speed"}
+		]
+  },
+  {
+    "name":"force_store",
+    "id": 18,
+    "desc":"Force store ",
+    "subs" : [
+		{"name":"store", "id":0,"desc": "0=no, 1=yes"}
+		]
+  },
+{"alias":"no", "represents":0},
+{"alias":"yes", "represents":1},
+{"alias":"forever", "represents":0},
+{"alias":"straight", "represents":0},
+{"alias":"idle", "represents":0},
+{"alias":"in", "represents":1},
+{"alias":"out", "represents":2},
+{"alias":"left", "represents":3},
+{"alias":"right", "represents":4},
+{"alias":"drive_complete", "represents":0},
+{"alias":"one_tote", "represents":1},
+{"alias":"two_totes", "represents":2},
+{"alias":"three_totes", "represents":3},
+{"alias":"load_can", "represents":4},
+{"alias":"raw_height", "represents":4},
+{"alias":"auto", "represents":0},
+{"alias":"manual", "represents":1},
+{"alias":"past_y_dist", "represents":4},
+{"alias":"past_x_dist", "represents":5},
+{"alias":"elevator_ping_detect", "represents":6},
+{"alias":"tote_load_height", "represents":0},
+{"alias":"can_load_height", "represents":1},
+{"alias":"elev_zeroed", "represents":0},
+{"alias":"eject", "represents":2},
+{"alias":"lift", "represents":1},
+{"alias":"drop", "represents":2},
+{"alias":"forward_past_y_dist", "represents":7},
+{"alias":"elevator_in_position", "represents":8},
+{"alias":"elevator_higher_than", "represents":9},
+{"alias":"elevator_lower_than", "represents":10}
+]

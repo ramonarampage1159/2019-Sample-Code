@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window
+	x:Class="Isotope.NewWord" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+	Width="300"
+	Title="Isotope - New KeyWord"
+	Height="180.3"
+	ResizeMode="NoResize">
+	<Grid>
+		<StackPanel
+			Orientation="Horizontal"
+			VerticalAlignment="Stretch"
+			HorizontalAlignment="Stretch"
+			Grid.Row="0"
+			Grid.Column="0">
+			<Label
+				Content="Name:"
+				Padding="5,0,0,0"
+				Grid.Column="0"
+				Grid.Row="0"
+				HorizontalAlignment="Left"
+				VerticalAlignment="Top"
+				Width="42"
+				Height="20"
+				Margin="8,8,0,0" />
+			<TextBox
+				Text=""
+				Grid.Column="0"
+				Grid.Row="0"
+				HorizontalAlignment="Left"
+				VerticalAlignment="Top"
+				Margin="8,4,0,0"
+				Width="120"
+				Height="25"
+				x:Name="wordBox" />
+		</StackPanel>
+		<xctk:ColorPicker
+			Height="24"
+			VerticalAlignment="Top"
+			Margin="12,30,0,0"
+			HorizontalAlignment="Left"
+			Width="243"
+			ShowAdvancedButton="False"
+			DisplayColorAndName="True"
+			StandardColors="{Binding ColorList}"
+			AvailableColors="{Binding ColorList}"
+			Name="ColorPicker" />
+		<Button
+			Content="Save Word"
+			Grid.Column="0"
+			Grid.Row="0"
+			HorizontalAlignment="Right"
+			VerticalAlignment="Bottom"
+			Margin="0,0,8,8"
+			Width="75"
+			Height="23"
+			Click="save_word" />
+		<CheckBox
+			Content="Bold"
+			x:Name="bold"
+			Grid.Column="0"
+			Grid.Row="0"
+			HorizontalAlignment="Stretch"
+			VerticalAlignment="Stretch"
+			Height="16"
+			Checked="bold_c"
+			Unchecked="bold_uc"
+			Margin="8,60,16,53" />
+		<CheckBox
+			Content="Italic"
+			x:Name="italic"
+			Grid.Column="0"
+			Grid.Row="0"
+			Checked="italic_c"
+			Unchecked="italic_uc"
+			HorizontalAlignment="Stretch"
+			VerticalAlignment="Stretch"
+			Margin="8,94,0,35"
+			Height="19.000000000000007" />
+		<Grid.ColumnDefinitions></Grid.ColumnDefinitions>
+	</Grid>
+</Window>

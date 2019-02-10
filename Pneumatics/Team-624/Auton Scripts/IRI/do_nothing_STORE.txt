@@ -1,0 +1,4 @@
+﻿force_store store=yes
+store_can store=yes
+set_elevator mode=auto command=idle
+wait maxTime=0

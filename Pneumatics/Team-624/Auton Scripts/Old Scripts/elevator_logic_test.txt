@@ -1,0 +1,27 @@
+﻿;test elevator_in_position
+set_rollers mode=manual align=idle closed=yes
+set_elevator mode=auto command=idle idle_set=raw_height height=20
+wait maxTime=250
+wait_for condition=elevator_in_position
+set_rollers mode=manual align=idle closed=no
+set_elevator mode=auto command=idle idle_set=raw_height height=30
+wait maxTime=250
+wait_for condition=elevator_in_position
+set_rollers mode=manual align=idle closed=yes
+;.....
+wait maxTime=3000
+;test lower_than
+set_elevator mode=auto command=idle idle_set=raw_height height=0
+wait_for condition=elevator_lower_than height=15
+set_elevator mode=auto command=idle idle_set=raw_height height=30
+wait maxTime=250
+wait_for condition=elevator_in_position
+;.......
+set_elevator mode=auto command=idle idle_set=raw_height height=0
+wait maxTime=250
+wait_for condition=elevator_in_position
+;test higher_than
+wait maxTime=3000
+set_elevator mode=auto command=idle idle_set=raw_height height=30
+wait_for condition=elevator_higher_than height=15
+set_elevator mode=auto command=idle idle_set=raw_height height=0
