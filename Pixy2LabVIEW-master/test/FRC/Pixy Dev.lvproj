@@ -15,7 +15,7 @@
 	</Item>
 	<Item Name="roboRIO-2000-FRC" Type="RT roboRIO">
 		<Property Name="alias.name" Type="Str">roboRIO-2000-FRC</Property>
-		<Property Name="alias.value" Type="Str">172.22.11.2</Property>
+		<Property Name="alias.value" Type="Str">roboRIO-1159-FRC.local</Property>
 		<Property Name="CCSymbols" Type="Str">TARGET_TYPE,RT;OS,Linux;CPU,ARM;DeviceCode,76F2;</Property>
 		<Property Name="crio.ControllerPID" Type="Str">76F2</Property>
 		<Property Name="host.ResponsivenessCheckEnabled" Type="Bool">true</Property>
